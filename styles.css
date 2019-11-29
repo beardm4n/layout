@@ -34,6 +34,11 @@ header {
     background-color: rgb(2, 87, 2);
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .header-left {
     width: 100%;
     background-color: rgb(226, 155, 0);
@@ -99,6 +104,27 @@ header {
     background-color: white;
     border: 2px solid rgb(2, 87, 2, 0.7);
     position: relative;
+}
+
+.block:nth-child(1),
+.block:nth-child(4),
+.block:nth-child(6) {
+    filter: contrast(0.5);
+}
+
+.block:nth-child(2):hover,
+.block:nth-child(3):hover,
+.block:nth-child(5):hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+
+
+.block:nth-child(2):active,
+.block:nth-child(3):active,
+.block:nth-child(5):active {
+    cursor: default;
+    filter: brightness(1.2);
 }
 
 .img-menu--computer {
