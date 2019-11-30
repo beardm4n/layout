@@ -3,18 +3,21 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    width: 100%;
+	height: 100%;
 }
 
 body::after {
 	content: '';
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    filter: saturate(2.5);
+	
 	background: url('img/pattern.png') repeat;
 }
 
@@ -30,6 +33,11 @@ header {
     display: flex;
     flex-direction: row;
     background-color: rgb(2, 87, 2);
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .header-left {
@@ -99,6 +107,27 @@ header {
     position: relative;
 }
 
+.block:nth-child(1),
+.block:nth-child(4),
+.block:nth-child(6) {
+    filter: contrast(0.5);
+}
+
+.block:nth-child(2):hover,
+.block:nth-child(3):hover,
+.block:nth-child(5):hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+
+
+.block:nth-child(2):active,
+.block:nth-child(3):active,
+.block:nth-child(5):active {
+    cursor: default;
+    filter: brightness(1.2);
+}
+
 .img-menu--computer {
     width: 50px;
     position: absolute;
@@ -121,11 +150,37 @@ header {
     top: 290px;
 }
 
+.view {
+    border-radius: 0 11px 0 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px 0 5px;
+    background: white;
+}
+
+.view-img {
+    width: 20px;
+    margin: 2px;
+}
+
+.view-text {
+    color: rgb(2, 87, 2);
+    font-weight: 700;
+    font-size: 15px;
+    margin: 3px;
+}
+
 .preview-card {
     display: flex;
     justify-content: center;
     border-radius: 30px 30px 0 0;
     overflow: hidden;
+    position: relative;
 }
 
 .preview-text {
@@ -133,8 +188,9 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 15px;
+    padding-top: 15px;
     height: 10rem;
+    border-top: 2px solid rgb(228, 113, 37);
 }
 
 .title {
@@ -154,16 +210,14 @@ header {
 img {
     width:100%;
 }
-.img {
-    border-bottom: 2px solid rgb(226, 90, 0);
-}
 
 footer {
-    position: absolute;
+    margin-top: 50px;
+    position: static;
     bottom: -5rem;
     background-color: white;
     width: 100%;
-    border-top: 2px solid rgb(226, 90, 0);
+    border-top: 2px solid rgb(228, 113, 37);
 }
 
 footer p {
