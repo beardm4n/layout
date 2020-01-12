@@ -10,3 +10,10 @@ link.forEach(item => {
         })
     }
 })
+
+// get random number for views
+const counter = [...document.querySelectorAll('.view-text')];
+counter.forEach(item => {
+    const randomNum = Math.floor(Math.random() * 100000);
+    item.textContent = randomNum;
+});
